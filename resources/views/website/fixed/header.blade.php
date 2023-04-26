@@ -14,8 +14,8 @@
             <a href="{{ route('course.web') }}" class="nav-link ">Course</a>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
             <a href="{{route ('registration') }}" class="nav-item nav-link">Registration</a>
-            <a href="" data-toggle="modal" data-target="#modalLoginForm"  class="nav-item nav-link">Login</a>
-          <a href="" class="nav-item nav-link"></a>
+            <a href="{{route ('login') }}"   class="nav-item nav-link">Login</a>
+
 
              @auth
 
@@ -35,9 +35,9 @@
         </div>
     </nav>
     <!-- Navbar End -->
-    <!-- LOG IN -->
+    <!-- LOG IN with Modal  -->
 
-    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    {{-- <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -74,5 +74,8 @@
     </div>
   </div>
 
-
-
+  <div class="text-center">
+    <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
+      Modal Login Form</a>
+  </div>
+ --}}

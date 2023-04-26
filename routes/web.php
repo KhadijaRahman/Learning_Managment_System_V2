@@ -14,6 +14,7 @@ use App\Http\Controllers\RegistrationController;
 use Symfony\Component\HttpKernel\Profiler\Profile;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Frontend\HomeController as FrontendHome;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VideoController;
 
 // SSLCOMMERZ Start
@@ -34,19 +35,16 @@ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
 
 Route::get('/', [FrontendHome::class, 'website'])->name('website');
 
-// Route log in
 
-Route::post('/web-login',[FrontendHome::class,'weblogin'])->name('weblogin');
-
-
+// Route For Going to Lecture for student
+Route::get('/mylecture', [VideoController::class, 'lecture'])->name('lecture.web');
 
 
-// Route for courses
+// Route for courses in Frontend
 Route::get('/course', [FrontendHome::class, 'course'])->name('course.web');
 
 
-// Route For Going to Lecture for stuent
-Route::get('/mylecture', [LectureController::class, 'lecture'])->name('lecture.web');
+
 
 
 
@@ -57,11 +55,15 @@ Route::get('/registration/frontend', [RegistrationController::class, 'registrati
 Route::post('registration/store', [RegistrationController::class, 'registrationStore'])->name('registration.store');
 
 
+// Route for ordercourse
 
 Route::get('/order/{id}', [ProfileController::class, 'order'])->name('order.now');
 
 Route::post('/order/store', [ProfileController::class, 'orderStore'])->name('order.store');
 
+
+// Frontend LogIn
+Route::get('/login', [UserController::class, 'login'])->name("login");
 
 
 
@@ -75,6 +77,10 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['middleware' => 'auth'], function () {
 
+        //DashBoard
+
+        Route::get('/dashboard', [HomeController::class, 'dashboard'])->name('dashboard');
+
         // For single view
         Route::get('/enrollment/{id}', [ProfileController::class, 'enrollment'])->name('enrollment');
         Route::get('/', [UserController::class, 'home'])->name('home');
@@ -82,6 +88,8 @@ Route::group(['prefix' => 'admin'], function () {
 
         // Route For Profile
         Route::get('/profile', [ProfileController::class, 'profile'])->name('profile');
+
+
 
         // For course
         Route::get('/course/list', [CourseController::class, 'course'])->name('course.list');
@@ -121,9 +129,7 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/teacher/delete{id}', [TeacherController::class, 'delete'])->name('teacher.delete');
 
 
-        //DashBoard
 
-        Route::get('/dashboard', [RegistrationController::class, 'dashboard'])->name('dashboard');
 
 
 
@@ -132,12 +138,18 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/enroll/list', [EnrollController::class, 'enroll'])->name('enroll.list');
 
 
-        // Route For Teacher to upload content
+        // Route For Teacher to upload Video content
         Route::get('/upload/list', [VideoController::class, 'list'])->name('upload.list');
+        Route::get('/upload/create', [VideoController::class, 'create'])->name('upload.create');
         Route::post('/upload/store', [VideoController::class, 'store'])->name('upload.store');
+
+
+
 
         // Route For Teacher to upload Exam-paper
         Route::get('/Exam/list', [ExamController::class, 'list'])->name('exam.list');
+        Route::get('/Exam/create', [ExamController::class, 'create'])->name('exam.create');
         Route::post('/Exam/store', [ExamController::class, 'store'])->name('exam.store');
+
     });
 });

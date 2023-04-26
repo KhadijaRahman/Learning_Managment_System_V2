@@ -21,7 +21,10 @@
           </li>
         </ul>
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item dropdown d-none d-lg-block">
+
+
+            {{-- Message Dropdown  --}}
+          {{-- <li class="nav-item dropdown d-none d-lg-block">
             <a class="nav-link dropdown-bordered dropdown-toggle dropdown-toggle-split" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false"> Select Category </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
               <a class="dropdown-item py-3" >
@@ -53,21 +56,31 @@
                 </div>
               </a>
             </div>
-          </li>
-          <li class="nav-item d-none d-lg-block">
+          </li> --}}
+
+
+          {{-- Form Control --}}
+          {{-- <li class="nav-item d-none d-lg-block">
             <div id="datepicker-popup" class="input-group date datepicker navbar-date-picker">
               <span class="input-group-addon input-group-prepend border-right">
                 <span class="icon-calendar input-group-text calendar-icon"></span>
               </span>
               <input type="text" class="form-control">
             </div>
-          </li>
-          <li class="nav-item">
+          </li> --}}
+
+
+
+          {{--search icon + search  --}}
+          {{-- <li class="nav-item">
             <form class="search-form" action="#">
               <i class="icon-search"></i>
               <input type="search" class="form-control" placeholder="Search Here" title="Search here">
             </form>
-          </li>
+          </li> --}}
+
+
+
           <li class="nav-item ">
             <a class="nav-link count-indicator" id="notificationDropdown" href="{{route('profile') }}">
               <i class="ti-stamp"></i>

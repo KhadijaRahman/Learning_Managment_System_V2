@@ -14,6 +14,10 @@ class Courselist extends Model
 {
      return $this->belongsto(Category::class);
 }
+public function teacher()
+{
+     return $this->belongsto(Teacher::class);
+}
 
 
 }

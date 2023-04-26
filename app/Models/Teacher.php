@@ -9,6 +9,9 @@ class Teacher extends Model
 {
     use HasFactory;
     protected $guarded=[];
-    
+    // public function courselist()
+    // {
+    //     return $this->belongsTo(Courselist::class, 'courselists_id', 'id');
+    // }
 
 }

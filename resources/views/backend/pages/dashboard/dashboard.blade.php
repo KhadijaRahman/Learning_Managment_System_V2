@@ -21,13 +21,13 @@
               <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span></span></p>
             </div>
             <div class="d-none d-md-block">
-              <p class="statistics-title">Avg. Time on Site</p>
-              <h3 class="rate-percentage">2m:35s</h3>
-              <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
+              <p class="statistics-title">Total Teacher</p>
+              <h3 class="rate-percentage">{{ $teacher }}</h3>
+              <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span></span></p>
             </div>
             <div class="d-none d-md-block">
-              <p class="statistics-title">New Sessions</p>
-              <h3 class="rate-percentage">68.8</h3>
+              <p class="statistics-title"> Added Student by Admin </p>
+              <h3 class="rate-percentage"></h3>
               <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span></span></p>
             </div>
             <div class="d-none d-md-block">

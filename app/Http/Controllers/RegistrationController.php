@@ -12,7 +12,8 @@ class RegistrationController extends Controller
     public function registration(){
         return view('website.registration.registration');
     }
-    public function registrationStore(Request $request){
+    public function registrationStore(Request $request)
+    {
 
         User::create([
 
@@ -27,15 +28,20 @@ class RegistrationController extends Controller
        ]);
        toastr()->success('Registration Success','Success');
 
-       return to_route('website');
+       return redirect()->route('website');
 
 
     }
-    public function dashboard(){
-        $course =Courselist::all()->count();
-        $totaluser = User::get()->count();
-        $totalEnroll = Order::get()->count();
 
-        return view('backend.pages.dashboard.dashboard',compact('totaluser','totalEnroll','course'));
-    }
+    public function dashboard()
+        {
+            $course =Courselist::all()->count();
+            $totaluser = User::get()->count();
+            $totalEnroll = Order::get()->count();
+
+            return view('backend.pages.dashboard.dashboard',compact('totaluser','totalEnroll','course'));
+        }
+
+
+
 }

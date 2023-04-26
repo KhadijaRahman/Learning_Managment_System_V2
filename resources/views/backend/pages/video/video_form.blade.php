@@ -19,6 +19,28 @@
                             <input type="text" name="title" id="title" class="form-control">
                         </div>
 
+                        <div>
+                            <label for="">Course Name:</label>
+                            <select name="courselists_id" id="" class="form-control">
+
+                                @foreach($courselist as $data)
+
+                                <option value="{{$data->id}}">{{$data->course_Name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="">Teachers:</label>
+                            <select name="teacher_id" id="" class="form-control">
+
+                                @foreach($teacher as $data)
+
+                                <option value="{{$data->id}}">{{$data->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+
                         <div class="form-group">
                             <label for="filename">Videos</label>
                             <input type="file" name="video[]" id="filename" class="form-control" multiple>

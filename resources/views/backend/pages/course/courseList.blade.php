@@ -7,6 +7,7 @@
         <tr>
             <th scope="col">id</th>
             <th scope="col">Course Name</th>
+            <th scope="col">Teacher Name</th>
             <th scope="col">Category name</th>
             <th scope="col">Price</th>
             <th scope="col">Duration</th>
@@ -20,6 +21,7 @@
             <th scope="row">{{$key+1}}</th>
             <td>{{$course->course_Name}}</td>
             <td>{{$course->category?->category_name}}</td>
+            <td>{{$course->teacher->name}}</td>
             <td>{{$course->course_price}}</td>
             <td>{{$course->course_duration}}</td>
             <td>

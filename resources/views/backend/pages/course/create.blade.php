@@ -24,8 +24,20 @@
                 </div>
 
                 <div>
+                    <label for="">Teacher Name:</label>
+                    <select name="teacher_id" id="" class="form-control">
+
+                        @foreach($teacher as $data)
+
+                        <option value="{{$data->id }}">{{ $data->name }}</option>
+                        @endforeach
+
+                    </select>
+                </div>
+
+                <div>
                     <label for=""> course Price:</label>
-                    <input name="price" placeholder="Enter Product quantity" type="number" class="form-control">
+                    <input name="price"  min="0" required placeholder="Enter Product quantity" type="number" class="form-control">
                 </div>
 
                 <div>

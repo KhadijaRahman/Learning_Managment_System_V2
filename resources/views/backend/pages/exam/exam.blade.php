@@ -21,8 +21,9 @@
 </head>
 <body>
     <div class="container mt-5">
-        <form action="{{route('exam.store')}}" method="post" enctype="multipart/form-data">
+        <form action="{{route('exam.store')}}" method= 'post'  enctype="multipart/form-data">
           <h3 class="text-center mb-5">Upload Exam File</h3>
+
             @csrf
             @if ($message = Session::get('success'))
             <div class="alert alert-success">
@@ -39,9 +40,10 @@
             </div>
           @endif
             <div class="custom-file">
-                <input type="file" name="file" class="custom-file-input" id="chooseFile">
+                <input type="file" name="filename" class="custom-file-input" id="chooseFile">
                 <label class="custom-file-label" for="chooseFile">Select file</label>
             </div>
+
             <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
                 Upload Files
             </button>

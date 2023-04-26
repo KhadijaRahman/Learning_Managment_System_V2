@@ -12,6 +12,17 @@
                     <input name="teacher_name" placeholder="Enter Teacher name" type="text" class="form-control">
                 </div>
 
+                {{-- <div>
+                    <label for="">Course :</label>
+                    <select name="courselists_id" id="" class="form-control">
+
+                        @foreach($courselist as $data)
+
+                        <option value="{{$data->id }}">{{ $data->course_Name }}</option>
+                        @endforeach
+                    </select>
+                </div> --}}
+
                 <div>
                     <label for="">Teacher Email:</label>
                     <input name="teacher_email" placeholder="Enter email" type="email" class="form-control">

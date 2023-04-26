@@ -42,10 +42,10 @@ class UserController extends Controller
             if (auth()->user()->role == 'Admin') {
                 return redirect()->route('dashboard');
             }
-            // else {
+             else {
 
-            //     return redirect()->route('website');
-            // }
+               return redirect()->route('website');
+             }
         }
 
         return redirect()->back();

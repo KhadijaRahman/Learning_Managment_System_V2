@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('videos', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->foreignId('courselists_id');
+            $table->foreignId('teacher_id');
             $table->string('filename')->nullable();
             $table->string('description');
             $table->timestamps();

@@ -2,19 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Exam;
 use Illuminate\Http\Request;
 
 class ExamController extends Controller
 {
     public function list()
     {
-        return view('backend.pages.teacher.take_exam');
+        $exams = Exam::all();
+        return view('backend.pages.exam.exam_list',compact('exams'));
+    }
+    public function create()
+    {
+        return view('backend.pages.exam.exam');
     }
     public function store(Request $request)
+
     {
-        $request->validate([
+
+        $fileName='';
+        if($request->hasFile('filename'))
+        {
+            $fileName=date('Ymdhis').'.'.$request->file('filename')->getClientOriginalExtension();
+            $request->file('filename')->storeAs('/uploads',$fileName);
+        }
+        Exam::create([
+
+            'name'=>$request->name,
+            'filename'=>$fileName,
+
             'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+
         ]);
+
+
 
         $fileName = time() . '.' . $request->file->extension();
 

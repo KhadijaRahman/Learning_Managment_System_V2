@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Courselist;
 use Illuminate\Http\Request;
 
 class LectureController extends Controller
 {
    public function lecture()
    {
-
-    return view('website.pages.lecture.lecture_content');
+     $lecture=Courselist::all();
+    return view('website.pages.lecture.lecture_content',compact('lecture'));
    }
 }

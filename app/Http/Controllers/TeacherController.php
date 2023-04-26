@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Courselist;
 use App\Models\Teacher;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,8 @@ class TeacherController extends Controller
     }
 
     public function form(){
-        return view('backend.pages.teacher.form');
+        $courselist=Courselist::all();
+        return view('backend.pages.teacher.form',compact('courselist'));
     }
 
     public function store(Request $request)
@@ -21,6 +23,7 @@ class TeacherController extends Controller
     Teacher::create([
 
         'name'=>$request->teacher_name,
+        
         'address'=>$request->teacher_email,
         'email'=>$request->teacher_contact,
         'contact'=>$request->teacher_address,

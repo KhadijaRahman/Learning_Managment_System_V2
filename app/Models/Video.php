@@ -9,4 +9,13 @@ class Video extends Model
 {
     use HasFactory;
     protected   $guarded = [];
+
+    public function courselist()
+    {
+        return $this->belongsTo(Courselist::class, 'courselists_id', 'id');
+    }
+    public function teacher()
+    {
+        return $this->belongsTo(Teacher::class, 'teacher_id', 'id');
+    }
 }
