@@ -86,60 +86,61 @@
                             </div>
                             <hr>
 
-                    </div>
+                        </div>
 
-                    <div class="row g-4 justify-content-center">
-
-
-{{--                                         --}}
-
-                        @foreach ($co as $data)
-                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                                <div class="course-item bg-light">
-                                    <div class="position-relative overflow-hidden">
-                                        <img class="img-fluid" src="img/course-1.jpg" alt="">
-                                        <div
-                                            class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                        <div class="row g-4 justify-content-center">
 
 
-                                            <a href="{{ route('enrollment', $data->id) }}"
-                                                class="flex-shrink-0 btn btn-sm btn-primary px-3"
-                                                style="border-radius: 0 30px 30px 0;"></a>
+                            {{--                                         --}}
+
+                            @foreach ($co as $data)
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="course-item bg-light">
+                                        <div class="position-relative overflow-hidden">
+                                            <img class="img-fluid" src="img/course-1.jpg" alt="">
+                                            <div
+                                                class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+
+
+                                                <a href="{{ route('enrollment', $data->id) }}"
+                                                    class="flex-shrink-0 btn btn-sm btn-primary px-3"
+                                                    style="border-radius: 0 30px 30px 0;"></a>
+                                            </div>
+                                        </div>
+                                        <div class="text-center p-4 pb-0">
+                                            <a
+                                                href="{{ route('lecture.web', $data->id) }}"class="mb-50">{{ $data->course_Name }}</a>
+
+
+                                            <h5 class="mb-0">{{ $data->course_price }}</h5>
+
+
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i
+                                                    class="fa fa-user-tie text-primary me-2"></i>{{ $data->teacher->name }}</small>
+                                            <small class="flex-fill text-center border-end py-2"><i
+                                                    class="fa fa-clock text-primary me-2"></i>{{ $data->course_duration }}
+                                                hrs</small>
+
                                         </div>
                                     </div>
-                                    <div class="text-center p-4 pb-0">
-                                        <a href="{{route('lecture.web')}}"class="mb-50" >{{ $data->course_Name }}</a>
-
-
-                                        <h5 class="mb-0">{{ $data->course_price }}</h5>
-
-
-                                    </div>
-                                    <div class="d-flex border-top">
-                                        <small class="flex-fill text-center border-end py-2"><i
-                                                class="fa fa-user-tie text-primary me-2"></i>{{ $data->teacher->name }}</small>
-                                        <small class="flex-fill text-center border-end py-2"><i
-                                                class="fa fa-clock text-primary me-2"></i>{{ $data->course_duration }}
-                                            hrs</small>
-
-                                    </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
+
                     </div>
-
                 </div>
+
             </div>
-
         </div>
-    </div>
-    <div>
+        <div>
 
-        <div class="row g-4 justify-content-center">
-
+            <div class="row g-4 justify-content-center">
 
 
 
+
+            </div>
         </div>
-    </div>
-@endsection
+    @endsection

@@ -37,7 +37,7 @@ Route::get('/', [FrontendHome::class, 'website'])->name('website');
 
 
 // Route For Going to Lecture for student
-Route::get('/mylecture', [VideoController::class, 'lecture'])->name('lecture.web');
+Route::get('/mylecture/{id}', [VideoController::class, 'lecture'])->name('lecture.web');
 
 
 // Route for courses in Frontend
@@ -150,6 +150,5 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/Exam/list', [ExamController::class, 'list'])->name('exam.list');
         Route::get('/Exam/create', [ExamController::class, 'create'])->name('exam.create');
         Route::post('/Exam/store', [ExamController::class, 'store'])->name('exam.store');
-
     });
 });
