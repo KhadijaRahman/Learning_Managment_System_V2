@@ -37,7 +37,7 @@
                 <i class="menu-arrow"></i>
             </a>
             <li class="nav-item">
-                <a class="nav-link" href="" aria-expanded="false" aria-controls="charts">
+                <a class="nav-link" href="{{route('attendence')}}" aria-expanded="false" aria-controls="charts">
                     <i class="menu-icon mdi mdi-chart-line"></i>
                     <span class="menu-title">Attendence</span>
                     <i class="menu-arrow"></i>

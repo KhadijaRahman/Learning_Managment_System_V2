@@ -25,7 +25,7 @@
           <h3 class="text-center mb-5">Upload Exam File</h3>
 
             @csrf
-            @if ($message = Session::get('success'))
+            {{-- @if ($message = Session::get('success'))
             <div class="alert alert-success">
                 <strong>{{ $message }}</strong>
             </div>
@@ -38,7 +38,7 @@
                     @endforeach
                 </ul>
             </div>
-          @endif
+          @endif --}}
             <div class="custom-file">
                 <input type="file" name="filename" class="custom-file-input" id="chooseFile">
                 <label class="custom-file-label" for="chooseFile">Select file</label>

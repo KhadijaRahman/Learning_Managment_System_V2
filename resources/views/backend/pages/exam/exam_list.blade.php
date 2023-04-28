@@ -6,7 +6,7 @@
         <thead>
         <tr>
             <th scope="col">id</th>
-            <th scope="col">name</th>
+
             <th scope="col">Folder</th>
             {{-- <th scope="col">email</th>
             <th scope="col">contact</th>
@@ -18,8 +18,8 @@
      @foreach($exams as $data)
         <tr>
         <th scope="row">{{ $data->id}}</th>
-            <td>{{ $data->name}}</td>
-            
+        
+
             <td>{{ $data->filename}}</td>
            {{-- <td>{{ $data->courselist->course_Name }}</td> --}}
             {{-- <td>{{ $data->email}}</td>

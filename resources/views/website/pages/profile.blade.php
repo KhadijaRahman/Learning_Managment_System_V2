@@ -66,10 +66,10 @@
                             <hr>
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <h6 class="mb-0">institution</h6>
+                                    <h6 class="mb-0">Institution</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    {{ auth()->user()->institution }}
+                                    {{ auth()->user()->Institution }}
                                 </div>
                             </div>
 
@@ -93,7 +93,7 @@
 
                             {{--                                         --}}
 
-                            @foreach ($co as $data)
+                            @foreach ($courses as $data)
                                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                     <div class="course-item bg-light">
                                         <div class="position-relative overflow-hidden">
@@ -109,19 +109,20 @@
                                         </div>
                                         <div class="text-center p-4 pb-0">
                                             <a
-                                                href="{{ route('lecture.web', $data->id) }}"class="mb-50">{{ $data->course_Name }}</a>
+                                                href="{{ route('lecture.web', $data->courselist_id) }}"class="mb-50">{{ $data->course->course_Name }}</a>
 
 
-                                            <h5 class="mb-0">{{ $data->course_price }}</h5>
+                                            <h5 class="mb-0">{{ $data->course->course_price }}</h5>BDT
 
 
                                         </div>
+                                        <small class=""></i>{{ $data->course->teacher->name }}</small>
+
                                         <div class="d-flex border-top">
                                             <small class="flex-fill text-center border-end py-2"><i
-                                                    class="fa fa-user-tie text-primary me-2"></i>{{ $data->teacher->name }}</small>
-                                            <small class="flex-fill text-center border-end py-2"><i
-                                                    class="fa fa-clock text-primary me-2"></i>{{ $data->course_duration }}
-                                                hrs</small>
+                                                    class="flex-fill text-center border-end py-2"><i
+                                                        class="fa fa-clock text-primary me-2"></i>{{ $data->course->course_duration }}
+                                                    hrs</small>
 
                                         </div>
                                     </div>

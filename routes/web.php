@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttendenceController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
@@ -42,6 +43,7 @@ Route::get('/mylecture/{id}', [VideoController::class, 'lecture'])->name('lectur
 
 // Route for courses in Frontend
 Route::get('/course', [FrontendHome::class, 'course'])->name('course.web');
+Route::get('/course-category', [FrontendHome::class, 'courseCategory'])->name('category.web');
 
 
 
@@ -150,5 +152,15 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/Exam/list', [ExamController::class, 'list'])->name('exam.list');
         Route::get('/Exam/create', [ExamController::class, 'create'])->name('exam.create');
         Route::post('/Exam/store', [ExamController::class, 'store'])->name('exam.store');
+
+
+       // Route for Attendence
+        Route::get('attendence', [AttendenceController::class, 'attendence'])->name('attendence');
+        Route::get('attendence/present{id}', [AttendenceController::class, 'present'])->name('attendence.present');
+        Route::get('attendence/absent{id}', [AttendenceController::class, 'absent'])->name('attendence.absent');
+        Route::get('attendence/create', [AttendenceController::class, 'create'])->name('attendence.create');
+
+
+        Route::post('attendence/store', [AttendenceController::class, 'store'])->name('attendence.store');
     });
 });

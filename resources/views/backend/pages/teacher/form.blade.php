@@ -42,7 +42,18 @@
                     <label for=""> Designation:</label>
                     <input name="teacher_designation" placeholder="Enter Designation" type="text" class="form-control">
                 </div>
+                {{-- <div>
+                    <label for="">Password:</label>
+                    <input name="password" placeholder="Enter password" type="password" class="form-control">
+                </div>
 
+                <div>
+                    <label for="">role</label>
+                    <select name="role" id="" class="form-control">
+                        <option value="admin">Admin</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+                </div> --}}
 
 
                 <div>

@@ -45,6 +45,7 @@
                     <input name="duration" placeholder="Enter Product quantity" type="number" class="form-control">
                 </div>
 
+
                 <div>
                     <label for="">course Status</label>
                     <select name="status" id="" class="form-control">
@@ -58,9 +59,10 @@
                     <input type="file" class="form-control">
                 </div>
 
+
                 <div>
-                    <label for="">Write description</label>
-                    <textarea name="description" placeholder="Enter description" class="form-control"></textarea>
+                    <label for=""> Description</label>
+                    <input name="course_description" placeholder="Enter Description" type="text" class="form-control">
                 </div>
 
 

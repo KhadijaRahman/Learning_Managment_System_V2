@@ -28,7 +28,7 @@ class RegistrationController extends Controller
        ]);
        toastr()->success('Registration Success','Success');
 
-       return redirect()->route('website');
+       return redirect()->route('login');
 
 
     }

@@ -11,6 +11,7 @@
             <th scope="col">Category name</th>
             <th scope="col">Price</th>
             <th scope="col">Duration</th>
+            <th scope="col">Description</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -24,6 +25,7 @@
             <td>{{$course->teacher->name}}</td>
             <td>{{$course->course_price}}</td>
             <td>{{$course->course_duration}}</td>
+            <td>{{$course->course_description}}</td>
             <td>
                 <a href="{{route('view',$course->id)}}" class="btn btn-info">View</a>
                 <a href="{{route('delete',$course->id)}}" class="btn btn-danger">Delete</a>

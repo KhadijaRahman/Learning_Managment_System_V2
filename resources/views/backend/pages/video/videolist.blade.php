@@ -21,7 +21,7 @@
                 <tr>
                     <th scope="row">{{ $data->id }}</th>
                     <td>{{ $data->title }}</td>
-                    <td>{{ $data->courselists->course_Name }}</td>
+                    <td>{{ $data->courselist->course_Name }}</td>
                     <td>{{ $data->teacher->name }}</td>
                     <td>{{ $data->filename }}</td>
                     <td>{{ $data->description }}</td>

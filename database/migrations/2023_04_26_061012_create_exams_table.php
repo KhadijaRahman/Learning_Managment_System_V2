@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('exams', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('filename')->nullable();
+            
+            $table->string('filename');
             $table->timestamps();
         });
     }

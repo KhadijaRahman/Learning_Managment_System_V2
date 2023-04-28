@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->integer('course_price');
             $table->string('course_duration');
+            $table->string('course_description');
             $table->timestamps();
         });
     }

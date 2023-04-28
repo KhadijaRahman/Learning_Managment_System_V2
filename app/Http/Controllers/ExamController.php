@@ -28,18 +28,18 @@ class ExamController extends Controller
         }
         Exam::create([
 
-            'name'=>$request->name,
+
             'filename'=>$fileName,
 
-            'file' => 'required|mimes:pdf,xlx,csv|max:2048',
 
         ]);
 
 
+        // 'file' => 'required|mimes:pdf,xlx,csv|max:2048',
 
-        $fileName = time() . '.' . $request->file->extension();
+        // $fileName = time() . '.' . $request->file->extension();
 
-        $file_path = $request->file->move(public_path('uploads'), $fileName);
+        // $file_path = $request->file->move(public_path('uploads'), $fileName);
         return back()
             ->with('success', 'You have successfully upload file.')
             ->with('file', $fileName);

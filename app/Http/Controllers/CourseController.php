@@ -34,7 +34,7 @@ class CourseController extends Controller
             'category_id' => $request->category_id,
             'course_price' => $request->price,
             'course_duration' => $request->duration,
-
+            'course_description' => $request->course_description,
         ]);
         return redirect()->route('course.list');
     }

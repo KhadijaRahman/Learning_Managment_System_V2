@@ -12,10 +12,10 @@ class ProfileController extends Controller
     {
         //  $courses = Courselist::where('user_id', auth()->user()->id)->get();
         // for naming the course in profile where course are coming
-         $co =Courselist::all();
+        
         //
         $courses = Order::where('user_id', auth()->user()->id)->get();
-        return view('website.pages.profile', compact('courses','co'));
+        return view('website.pages.profile', compact('courses'));
     }
     public function enrollment($id)
     {

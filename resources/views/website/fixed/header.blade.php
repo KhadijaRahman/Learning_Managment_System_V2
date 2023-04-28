@@ -9,26 +9,27 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
-            <a href="index.html" class="nav-item nav-link active">Home</a>
+            <a href="{{ route('website') }}" class="nav-item nav-link active">Home</a>
             <a href="about.html" class="nav-item nav-link">About</a>
             <a href="{{ route('course.web') }}" class="nav-link ">Course</a>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
-            <a href="{{route ('registration') }}" class="nav-item nav-link">Registration</a>
-            <a href="{{route ('login') }}"   class="nav-item nav-link">Login</a>
-
-
-             @auth
-
-            @if (auth()->user()->role == 'student'||auth()->user()->role == 'teacher')
 
 
 
+            @auth
 
+            {{-- @if (auth()->user()->role == 'student'||auth()->user()->role == 'teacher') --}}
 
             <a href="{{route ('profile') }}" class="nav-item nav-link">Profile</a>
-            <a href="#" class="nav-item nav-link">Logout</a>
+            <a href="{{ route('logout') }}" class="nav-item nav-link">Logout</a>
 
-            @endif
+            {{-- @endif --}}
+
+            @else
+
+            <a href="{{route ('registration') }}" class="nav-item nav-link">Registration</a>
+
+            <a href="{{route ('login') }}"   class="nav-item nav-link">Login</a>
             @endauth
 
 

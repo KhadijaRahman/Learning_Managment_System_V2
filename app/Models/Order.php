@@ -9,4 +9,9 @@ class Order extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function course()
+    {
+        return $this->belongsTo(Courselist::class, 'courselist_id', 'id');
+    }
 }
