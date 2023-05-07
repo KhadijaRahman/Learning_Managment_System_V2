@@ -6,7 +6,7 @@
         <div class="col-sm-12">
           <div class="statistics-details d-flex align-items-center justify-content-between">
             <div>
-              <p class="statistics-title">Total User</p>
+              <p class="statistics-title">Types of User</p>
               <h2 class="rate-percentage">{{$totaluser}}</h2>
               <p class="text-danger d-flex"></p>
             </div>
@@ -25,20 +25,20 @@
               <h3 class="rate-percentage">{{ $teacher }}</h3>
               <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span></span></p>
             </div>
-            <div class="d-none d-md-block">
+            {{-- <div class="d-none d-md-block">
               <p class="statistics-title"> Added Student by Admin </p>
               <h3 class="rate-percentage"></h3>
               <p class="text-danger d-flex"><i class="mdi mdi-menu-down"></i><span></span></p>
-            </div>
-            <div class="d-none d-md-block">
+            </div> --}}
+            {{-- <div class="d-none d-md-block">
               <p class="statistics-title"></p>
               <h3 class="rate-percentage">2m:35s</h3>
               <p class="text-success d-flex"><i class="mdi mdi-menu-down"></i><span>+0.8%</span></p>
-            </div>
+            </div> --}}
           </div>
         </div>
       </div>
-      <div class="row">
+      {{-- <div class="row">
         <div class="col-lg-8 d-flex flex-column">
           <div class="row flex-grow">
             <div class="col-12 grid-margin stretch-card">
@@ -602,7 +602,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> --}}
     </div>
   </div>
 

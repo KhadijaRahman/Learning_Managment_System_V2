@@ -1,6 +1,6 @@
 @extends('backend.master')
 @section('content')
-    <a href="{{ route('student.form') }}" class="btn btn-success">Add New Student</a>
+     <a href="{{ route('student.form') }}" class="btn btn-info">Add New Student</a>
 
     <table class="table">
         <thead>
@@ -12,6 +12,7 @@
                 <th scope="col">Teacher name</th>
                 <th scope="Student Email">Student Email</th>
                 <th scope="Student Mobile">Student Mobile</th>
+                <th scope="Student Mobile">Student Address</th>
                 <th scope="Gender">Gender</th>
                 <th scope="Gender">Action</th>
             </tr>
@@ -35,6 +36,7 @@
                     <td>{{ $student->teacher->name }}</td>
                     <td>{{ $student->student_email }}</td>
                     <td>{{ $student->student_mobile }}</td>
+                    <td>{{ $student->student_address }}</td>
                     <td>{{ $student->student_gender }}</td>
 
 
@@ -52,3 +54,5 @@
 
     {{ $students->links() }}
 @endsection
+
+{{-- style="background-color: red;color:white;" --}}

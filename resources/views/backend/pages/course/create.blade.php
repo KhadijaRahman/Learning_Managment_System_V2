@@ -37,12 +37,12 @@
 
                 <div>
                     <label for=""> course Price:</label>
-                    <input name="price"  min="0" required placeholder="Enter Product quantity" type="number" class="form-control">
+                    <input name="price"  min="0" required placeholder="Enter Price" type="number" class="form-control">
                 </div>
 
                 <div>
                     <label for=""> course Duration</label>
-                    <input name="duration" placeholder="Enter Product quantity" type="number" class="form-control">
+                    <input name="duration" min="1" required placeholder="Enter Duration " type="number" class="form-control">
                 </div>
 
 
@@ -50,7 +50,7 @@
                     <label for="">course Status</label>
                     <select name="status" id="" class="form-control">
                         <option value="active">Active</option>
-                        <option value="inactive">InActive</option>
+                        {{-- <option value="inactive">InActive</option> --}}
                     </select>
                 </div>
 

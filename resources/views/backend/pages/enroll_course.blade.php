@@ -6,7 +6,7 @@
         <thead>
             <tr>
                 <th scope="col">Sl</th>
-                <th scope="Student Name">Student Name</th>
+                {{-- <th scope=""></th> --}}
                 <th scope="Student Email">Student Email</th>
                 <th scope="Student Mobile">Student Mobile</th>
                 <th scope="Student Address">Student Address</th>
@@ -24,7 +24,7 @@
                 <tr>
 
                     <th scope="row">{{$data->id }}</th>
-                    <td> {{ $data->name }}</td>
+                    
                     <td>{{ $data->email }}</td>
                     <td>{{ $data->phone }} </td>
                     <td>{{ $data->address }} </td>

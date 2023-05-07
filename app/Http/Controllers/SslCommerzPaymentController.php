@@ -123,17 +123,17 @@ class SslCommerzPaymentController extends Controller
 
 
                 toastr()->success('Payment Success');
-                return redirect()->route('profile');
+                return redirect()->route('website');
             }
 
             toastr()->error('Payment failed');
-            return redirect()->back();
+            return redirect()->route('website');
         } else {
             #That means something wrong happened. You can redirect customer to your product page.
 
             toastr()->error('Already Paid');
 
-            return redirect()->back();
+            return redirect()->route('website');
         }
     }
 

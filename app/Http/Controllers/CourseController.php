@@ -7,14 +7,31 @@ use Illuminate\Http\Request;
 
 use App\Models\Courselist;
 use App\Models\Teacher;
+use Illuminate\Support\Facades\Validator;
 
 class CourseController extends Controller
 {
     public function course()
     {
+        if(\request()->from_date)
+        {
+            $validate=Validator::make(\request()->all(),[
+               'to_date'=>'after:from_date'
+            ]);
+            if($validate->fails())
+            {
+                toastr()->error('To date should greater than from date.');
+                return redirect()->route('course.list');
+            }
+            $coures = Courselist::with('category','teacher')->whereBetween('created_at',[\request()->from_date,\request()->to_date])->paginate(4);
+        }
+        else
+        {
+            $coures = Courselist::with('category','teacher')->paginate(4);
+        }
 
         //dd('course');
-        $coures = Courselist::with('category','teacher')->paginate(4);
+        // $coures = Courselist::with('category','teacher')->paginate(4);
         return view('backend.pages.course.courseList', compact('coures'));
     }
 

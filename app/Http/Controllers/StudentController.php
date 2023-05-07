@@ -32,13 +32,14 @@ class StudentController extends Controller
             $fileName = date('Ymdhis') . '.' . $request->file('student_image')->getClientOriginalExtension();
             $request->file('student_image')->storeAs('/uploads', $fileName);
         }
-        
+
         Student::create([
             'student_name' => $request->student_name,
             'courselists_id' => $request->courselists_id,
             'teacher_id' => $request->teacher_id,
             'student_email' => $request->student_email,
             'student_mobile' => $request->student_mobile,
+            'student_address'=>$request->student_address,
             'student_image' => $fileName,
             'student_gender' => $request->student_gender,
 

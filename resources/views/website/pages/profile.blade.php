@@ -19,8 +19,8 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin"
-                                    class="rounded-circle" width="150">
+                                <img src="https://t3.ftcdn.net/jpg/05/17/79/88/360_F_517798849_WuXhHTpg2djTbfNf0FQAjzFEoluHpnct.jpg"
+                                    alt="Admin" class="rounded-circle" width="150">
                                 <div class="mt-3">
                                     <h4>{{ auth()->user()->name }}</h4>
                                     <p class="text-secondary mb-1">{{ auth()->user()->role }}</p>
@@ -107,22 +107,24 @@
                                                     style="border-radius: 0 30px 30px 0;"></a>
                                             </div>
                                         </div>
+
                                         <div class="text-center p-4 pb-0">
+
                                             <a
                                                 href="{{ route('lecture.web', $data->courselist_id) }}"class="mb-50">{{ $data->course->course_Name }}</a>
 
 
-                                            <h5 class="mb-0">{{ $data->course->course_price }}</h5>BDT
+                                            <h5 class="mb-0">BDT{{ $data->course->course_price }}</h5>
 
+                                            <small class="text-center">{{ $data->course->teacher->name }}</small>
 
                                         </div>
-                                        <small class=""></i>{{ $data->course->teacher->name }}</small>
 
                                         <div class="d-flex border-top">
-                                            <small class="flex-fill text-center border-end py-2"><i
-                                                    class="flex-fill text-center border-end py-2"><i
-                                                        class="fa fa-clock text-primary me-2"></i>{{ $data->course->course_duration }}
-                                                    hrs</small>
+                                            <small class="flex-fill text-center border-end py-2">
+                                                <i
+                                                    class="fa fa-clock text-primary me-2"></i>{{ $data->course->course_duration }}
+                                                hrs</small>
 
                                         </div>
                                     </div>

@@ -15,6 +15,7 @@ class RegistrationController extends Controller
     public function registrationStore(Request $request)
     {
 
+
         User::create([
 
         'name'=>$request->name,
@@ -23,6 +24,7 @@ class RegistrationController extends Controller
         'address'=>$request->address,
         'Institution'=>$request->Institution,
         'password'=>bcrypt($request->password),
+        
         'role'=>$request->role
 
        ]);

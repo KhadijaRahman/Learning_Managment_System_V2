@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Certificate;
 use App\Models\Courselist;
 use App\Models\Teacher;
 use App\Models\Video;
@@ -11,7 +12,7 @@ class VideoController extends Controller
 {
     public function list()
     {
-        $video = Video::with('courselist', 'teacher');
+        $video = Video::all();
         return view('backend.pages.video.videolist', compact('video'));
     }
 
@@ -51,9 +52,13 @@ class VideoController extends Controller
 
     public function lecture($id)
     {
+
         $course = Courselist::with('videos')->find($id);
 
 
-        return view('website.pages.lecture.lecture_content', compact('course'));
+        $certificate = Certificate::where("courselist_id", $id)->where("user_id", auth()->user()->id)->first();
+        // dd($certificate);
+        return view('website.pages.lecture.lecture_content', compact('course', "certificate"));
+
     }
 }

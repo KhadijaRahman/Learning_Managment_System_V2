@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('student_image')->nullable();
             $table->string('student_email');
             $table->string('student_mobile');
+            $table->string('student_address');
             $table->string('student_gender');
             $table->timestamps();
         });

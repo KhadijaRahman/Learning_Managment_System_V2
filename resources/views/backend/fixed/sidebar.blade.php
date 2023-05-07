@@ -32,15 +32,15 @@
 
         <li class="nav-item">
             <a class="nav-link" href="{{ route('student.list') }}" aria-expanded="false" aria-controls="charts">
-                <i class="menu-icon mdi mdi-chart-line"></i>
+                <i class="menu-icon fa-solid fa-user-graduate"></i>
                 <span class="menu-title">Student</span>
                 <i class="menu-arrow"></i>
             </a>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route('attendence')}}" aria-expanded="false" aria-controls="charts">
                     <i class="menu-icon mdi mdi-chart-line"></i>
                     <span class="menu-title">Attendence</span>
-                    <i class="menu-arrow"></i>
+                    <i class="menu-arrow"></i> --}}
                 </a>
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('enroll.list') }}" aria-expanded="false" aria-controls="charts">
@@ -66,18 +66,18 @@
             </a>
 
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" href="{{ route('exam.list') }}" aria-expanded="false" aria-controls="auth">
                 <i class="menu-icon mdi mdi-account-circle-outline"></i>
                 <span class="menu-title">Take Exam</span>
                 <i class="menu-arrow"></i>
-            </a>
+            </a> --}}
 
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" href="">
                 <i class="menu-icon mdi mdi-file-document"></i>
-                <span class="menu-title">Report</span>
+                <span class="menu-title">Report</span> --}}
             </a>
         </li>
     </ul>

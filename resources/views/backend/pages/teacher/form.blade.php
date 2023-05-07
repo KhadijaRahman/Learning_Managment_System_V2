@@ -4,6 +4,8 @@
 
     <form action="{{route('teacher.store') }}"  method = 'post'>
     @csrf
+
+
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-6">
@@ -25,12 +27,26 @@
 
                 <div>
                     <label for="">Teacher Email:</label>
-                    <input name="teacher_email" placeholder="Enter email" type="email" class="form-control">
+                    <input name="teacher_email" placeholder="Enter email"  type="email" class="form-control">
+
+                    @error('teacher_contact')
+
+                    <span class="text-danger">{{ $message}}</span>
+
+                    @enderror
+
                 </div>
 
                 <div>
                     <label for="">Contact:</label>
                     <input name="teacher_contact" placeholder="Enter Contact" type="text" class="form-control">
+
+                    @error('teacher_contact')
+
+                    <span class="text-danger">{{ $message}}</span>
+
+                    @enderror
+
                 </div>
 
                 <div>

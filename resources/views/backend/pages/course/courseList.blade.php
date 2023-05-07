@@ -1,6 +1,33 @@
 @extends('backend.master')
 @section('content')
 
+
+
+
+
+
+<form action="{{route('course.list')}}">
+
+
+    <div class="row" style="padding-top: 40px;padding-bottom: 20px;">
+        <div class="col-md-4">
+            <label for="">From Date</label>
+            <input type="date" name="from_date" class="form-control" value="{{request()->from_date}}">
+        </div>
+        <div class="col-md-4">
+            <label for="">To Date</label>
+            <input type="date" name="to_date" class="form-control" value="{{request()->to_date}}">
+        </div>
+        <div class="col-md-4">
+
+            <button class="btn btn-success" type="submit">Search</button>
+            <button class="btn btn-primary" onclick="printDiv('printArea')" type="button">Print</button>
+        </div>
+    </div>
+
+    </form>
+    <div id="printArea">
+
     <a href="{{route('course.create')}}" class="btn btn-success">Create new Course</a>
     <table class="table">
         <thead>
@@ -34,5 +61,21 @@
         @endforeach
         </tbody>
     </table>
-    {{ $coures->links() }}
+</div>
+
+</div>
+{{ $coures->links() }}
+
+
+
+<script>
+
+    function printDiv(divID){
+        var printContents = document.getElementById(divID).innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
+        window.print();
+        document.body.innerHTML = originalContents;
+    }
+</script>
 @endsection

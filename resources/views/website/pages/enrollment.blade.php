@@ -3,13 +3,13 @@
     <form action="{{ route('pay.now') }}" method="post">
         @csrf
         <input type="hidden" name="course_id" value="{{ $course->id }}">
-        <section style="background-color: #eee;">
+        <section style="background-color: #eeeeee;">
             <div class="container py-5">
                 <div class="row justify-content-center">
                     <div class="col-md-8 col-lg-6 col-xl-4">
                         <div class="card text-black">
-                            <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i>
-                            <img src="" class="card-img-top" alt="Apple Computer" />
+                            {{-- <i class="fab fa-apple fa-lg pt-3 pb-1 px-3"></i> --}}
+                            <img src="" class="card-img-top" alt="" />
                             <div class="card-body">
                                 <div class="text-center">
                                     <h5 class="card-title">{{ $course->course_Name }}</h5>

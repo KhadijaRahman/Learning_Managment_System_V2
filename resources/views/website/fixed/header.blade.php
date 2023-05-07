@@ -10,7 +10,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
 
             <a href="{{ route('website') }}" class="nav-item nav-link active">Home</a>
-            <a href="about.html" class="nav-item nav-link">About</a>
+           
             <a href="{{ route('course.web') }}" class="nav-link ">Course</a>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
 

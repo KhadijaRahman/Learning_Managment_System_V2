@@ -20,10 +20,12 @@ class TeacherController extends Controller
 
     public function store(Request $request)
    {
+
+
     Teacher::create([
 
         'name'=>$request->teacher_name,
-        
+
         'address'=>$request->teacher_email,
         'email'=>$request->teacher_contact,
         'contact'=>$request->teacher_address,

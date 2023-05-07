@@ -12,7 +12,7 @@ class ProfileController extends Controller
     {
         //  $courses = Courselist::where('user_id', auth()->user()->id)->get();
         // for naming the course in profile where course are coming
-        
+
         //
         $courses = Order::where('user_id', auth()->user()->id)->get();
         return view('website.pages.profile', compact('courses'));
@@ -21,12 +21,10 @@ class ProfileController extends Controller
     {
         // dd($id);
         $course = Courselist::find($id);
-        $courselist = Order::where('courselist_id',$course->id)->exists();
-        if($courselist)
-        {
-        toastr()->success('Already Enrolled');
-        return redirect()->route('profile');
-
+        $courselist = Order::where('courselist_id', $course->id)->where('user_id', auth()->user()->id)->exists();
+        if ($courselist) {
+            toastr()->success('Already Enrolled');
+            return redirect()->route('profile');
         }
 
         return view('website.pages.enrollment', compact('course'));
@@ -34,7 +32,7 @@ class ProfileController extends Controller
     public function order($id)
     {
         $courselist = Courselist::find($id);
-        return view('website.pages.order',compact('courselist'));
+        return view('website.pages.order', compact('courselist'));
     }
     public function orderStore(Request $request)
     {
@@ -42,7 +40,8 @@ class ProfileController extends Controller
 
         Order::create([
             'user_id' => auth()->user()->id,
-            'courselist_id' =>$request->courselist_id,
+            'courselist_id' => $request->courselist_id,
+            
             'phone' => $request->phone,
             'email' => $request->email,
             'address' => $request->address,
@@ -51,9 +50,3 @@ class ProfileController extends Controller
         return redirect()->route('profile');
     }
 }
-
-
-
-
-
-
